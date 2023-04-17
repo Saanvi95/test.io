@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Web App</title>
+	<style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<h1>My Web App</h1>
+	<h2>Employee Information</h2>
+	<label for="employee-id">Employee ID:</label>
+	<input type="text" id="employee-id"><br>
+	<label for="date">Date:</label>
+	<input type="date" id="date"><br>
+	<label for="shift">Shift:</label>
+	<select id="shift">
+		<option value="day">Day</option>
+		<option value="night">Night</option>
+	</select>
+	<h2>Activity Information</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Activity Code</th>
+				<th>Work Order No</th>
+				<th>Machine Type</th>
+				<th>Activity Description</th>
+				<th>Qty</th>
+				<th>Time Taken</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody id="activity-table-body">
+			<tr>
+				<td><input type="text" name="activity-code"></td>
+				<td><input type="text" name="work-order-no"></td>
+				<td><input type="text" name="machine-type"></td>
+				<td><input type="text" name="activity-description"></td>
+				<td><input type="text" name="qty"></td>
+				<td><input type="text" name="time-taken"></td>
+				<td><input type="text" name="status"></td>
+			</tr>
+		</tbody>
+	</table>
+	<button id="add-row-button">Add New Row</button>
+	<br><br>
+	<button id="submit-button">Submit</button>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#add-row-button').click(function() {
+				var newRow = '<tr><td><input type="text" name="activity-code"></td><td><input type="text" name="work-order-no"></td><td><input type="text" name="machine-type"></td><td><input type="text" name="activity-description"></td><td><input type="text" name="qty"></td><td><input type="text" name="time-taken"></td><td><input type="text" name="status"></td></tr>';
+				$('#activity-table-body').append(newRow);
+			});
+			$('#submit-button').click(function() {
+				// Handle form submission here
+			});
+		});
+	</script>
+</body>
+</html>
